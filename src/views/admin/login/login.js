@@ -11,14 +11,14 @@ const AdminLogin = () => {
                     <div className="row">
                         <div className="col">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" />
+                                <input type="text" className="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" />
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
-                            <div class="input-group mb-3">
-                                <input type="password" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1" />
+                            <div className="input-group mb-3">
+                                <input type="password" className="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1" />
                             </div>
                         </div>
                     </div>

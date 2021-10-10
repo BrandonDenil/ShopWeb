@@ -1,5 +1,5 @@
-import { IP_SERVER } from './Config'
 const cryptoHash = require('crypto')
+const Server = "http://localhost:5000"
 
 //---------------------------------------------------------------
 // Functiones para realizar peticiones http (get,put,post,delete)
@@ -11,9 +11,10 @@ export const getRequest = async (_url) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-        },
+        }
     }
-    const response = await fetch(_url, options)
+
+    const response = await fetch(Server+_url, options)
     if (!response.ok) return { error: true }
     else {
         let json = await response.json()
@@ -37,7 +38,7 @@ export const postRequest = async (_url, _body) => {
         body: _body
     }
 
-    const response = await fetch(_url, options)
+    const response = await fetch( Server+_url, options)
     if (!response.ok) return { error: true }
     else {
         let json = await response.json()
@@ -60,7 +61,7 @@ export const putRequest = async (_url, _body) => {
         headers: headers,
         body: _body
     }
-    const response = await fetch(_url, options)
+    const response = await fetch(Server+_url, options)
     if (!response.ok) return { error: true }
     else {
         let json = await response.json()
@@ -76,7 +77,7 @@ export const deleteRequest = async (_url) => {
             'Content-Type': 'application/json',
         },
     }
-    const response = await fetch(_url, options)
+    const response = await fetch(Server+_url, options)
     if (!response.ok) return { error: true }
     else {
         let json = await response.json()

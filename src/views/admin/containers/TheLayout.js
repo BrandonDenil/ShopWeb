@@ -7,12 +7,10 @@ import {
 const TheLayout = () => {
 
   return (
-    <div >
-      <div className="c-wrapper">
-        <TheHeader />
-        <div className="c-body">
-          <TheContent />
-        </div>
+    <div style={{  display:"flex", flexDirection:"column" }}>
+      <TheHeader />
+      <div className="c-body" >
+        <TheContent />
       </div>
     </div>
   )
