@@ -2,6 +2,26 @@ import React, { useEffect, useState } from "react";
 import { getRequest } from "../../../libraries/Functions";
 import { BsTrash, BsPencil, BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import DTable from "../../../compoents/Table";
+
+const editItem = (_item) => {
+    return (
+        <Link to={`/admin/productos/${_item.Nombre}`}>
+            <button className="btn">
+                <BsPencil color="blue" />
+            </button>
+        </Link>
+
+    )
+}
+
+const deleteItem = (_item) => {
+    return (
+        <button className="btn" onClick={() => { alert(_item.Nombre) }}>
+            <BsTrash color="red" />
+        </button>
+    )
+}
 
 const ListarProductos = () => {
     const [productos, setProductos] = useState([])
@@ -13,6 +33,9 @@ const ListarProductos = () => {
             console.log(result)
         })
     }, [])
+
+    const headers = [{ name: 'Nombre' }, { name: 'Precio' }, { name: 'Cantidad' }, { name: 'Color' }, { name: 'Categoria' },
+    { name: 'Marca' }, { name: 'Editar', component: editItem }, { name: 'Eliminar', component: deleteItem }]
 
     return (
         <>
@@ -28,45 +51,7 @@ const ListarProductos = () => {
                                     <Link to="/admin/productos/nuevo"><button class="btn btn-outline-primary">Nuevo producto<BsPlus /></button></Link>
                                 </div>
                             </div>
-                            {
-                                productos.length > 0 ?
-                                    <table className="table  table-striped" >
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Precio</th>
-                                                <th scope="col">Cantidad</th>
-                                                <th scope="col">Color</th>
-                                                <th scope="col">Categoria</th>
-                                                <th scope="col">Marca</th>
-                                                <th></th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {
-                                                productos.map(element => {
-                                                    return (
-                                                        <tr>
-                                                            <td>{element.Nombre}</td>
-                                                            <td>{element.Precio}</td>
-                                                            <td>{element.Cantidad}</td>
-                                                            <td>{element.Color}</td>
-                                                            <td>{element._categoria.length > 0 ? element._categoria[0].Categoria : ""}</td>
-                                                            <td>{element._marca.length > 0 ? element._marca[0].Nombre : ""}</td>
-                                                            <td>
-                                                                <button type="button" class="btn btn-outline-warning"><BsPencil /></button>
-                                                            </td>
-                                                            <td>
-                                                                <button type="button" class="btn btn-outline-danger"> <BsTrash /> </button>
-                                                            </td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </tbody>
-                                    </table> : <></>
-                            }
+                            <DTable headers={headers} data={productos} filter/>
                         </div>
                     </div>
                 </div>
