@@ -30,7 +30,6 @@ const ListarProductos = () => {
 
         getRequest('/producto').then(result => {
             setProductos(result)
-            console.log(result)
         })
     }, [])
 
