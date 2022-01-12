@@ -3,30 +3,30 @@ import React from 'react'
 const Home = () => {
 
     return (
-        <div>    
-            <div id="template-mo-zay-hero-carousel" className="carousel slide" data-bs-ride="carousel">
-                <ol className="carousel-indicators">
-                    <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" className="active"></li>
+        <>
+            <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
                     <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
                     <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
                 </ol>
-                <div className="carousel-inner">
-                    <div classNameclass="carousel-item active">
-                        <div className="container">
-                            <div className="row p-5">
-                                <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                    <img className="img-fluid" src="./assets/img/banner_img_01.jpg" alt="" />
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row p-5">
+                                <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                                    <img class="img-fluid" src="./assets/img/banner_img_01.jpg" alt="" />
                                 </div>
-                                <div className="col-lg-6 mb-0 d-flex align-items-center">
-                                    <div className="text-align-left align-self-center">
-                                        <h1 className="h1 text-success"><b>Zay</b> eCommerce</h1>
-                                        <h3 className="h2">Tiny and Perfect eCommerce Template</h3>
+                                <div class="col-lg-6 mb-0 d-flex align-items-center">
+                                    <div class="text-align-left align-self-center">
+                                        <h1 class="h1 text-success"><b>Zay</b> eCommerce</h1>
+                                        <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
                                         <p>
                                             Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).
-                                            This template is 100% free provided by <a rel="sponsored" className="text-success" href="https://templatemo.com" target="_blank">TemplateMo</a> website.
-                                            Image credits go to <a rel="sponsored" className="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
-                                            <a rel="sponsored" className="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
-                                            <a rel="sponsored" className="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
+                                            This template is 100% free provided by <a rel="sponsored" class="text-success" href="https://templatemo.com" target="_blank">TemplateMo</a> website.
+                                            Image credits go to <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
+                                            <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
+                                            <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
                                         </p>
                                     </div>
                                 </div>
@@ -122,11 +122,11 @@ const Home = () => {
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-4 mb-4">
-                            <div class="card h-100">
+                            <div class="card" style={{ width: '100%' }}>
                                 <a href="shop-single.html">
                                     <img src="./assets/img/feature_prod_01.jpg" class="card-img-top" alt="..." />
                                 </a>
-                                <div class="card-body">
+                                <div class="card-body" >
                                     <ul class="list-unstyled d-flex justify-content-between">
                                         <li>
                                             <i class="text-warning fa fa-star"></i>
@@ -146,11 +146,11 @@ const Home = () => {
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mb-4">
-                            <div class="card h-100">
+                            <div class="card" style={{ width: '100%' }}>
                                 <a href="shop-single.html">
                                     <img src="./assets/img/feature_prod_02.jpg" class="card-img-top" alt="..." />
                                 </a>
-                                <div class="card-body">
+                                <div class="card-body" style={{ width: '100% !important;' }}>
                                     <ul class="list-unstyled d-flex justify-content-between">
                                         <li>
                                             <i class="text-warning fa fa-star"></i>
@@ -170,11 +170,11 @@ const Home = () => {
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mb-4">
-                            <div class="card h-100">
+                            <div class="card" style={{ width: '100%' }}>
                                 <a href="shop-single.html">
                                     <img src="./assets/img/feature_prod_03.jpg" class="card-img-top" alt="..." />
                                 </a>
-                                <div class="card-body">
+                                <div class="card-body" style={{ width: '100%' }}>
                                     <ul class="list-unstyled d-flex justify-content-between">
                                         <li>
                                             <i class="text-warning fa fa-star"></i>
@@ -196,9 +196,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
-           
-        </div>
+        </>
     )
 }
 

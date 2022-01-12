@@ -50,7 +50,7 @@ const ListarProductos = () => {
                                     <Link to="/admin/productos/nuevo"><button class="btn btn-outline-primary">Nuevo producto<BsPlus /></button></Link>
                                 </div>
                             </div>
-                            <DTable headers={headers} data={productos} filter/>
+                            <DTable headers={headers} data={productos} filter={true} className={"table  table-striped"}/>
                         </div>
                     </div>
                 </div>

@@ -8,15 +8,11 @@ import {
 const TheLayout = () => {
 
   return (
-    <div >
-      <div className="c-wrapper">
-        <TheHeader />
-        <div className="c-body">
-          <TheContent />
-        </div>
-        <TheFooter/>
-      </div>
-    </div>
+    <>
+      <TheHeader />
+      <TheContent />
+      <TheFooter />
+    </>
   )
 }
 

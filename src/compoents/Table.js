@@ -16,18 +16,15 @@ const DTable = (props) => {
     //Pagination
     useEffect(() => {
 
-        if (filterData.length > 0) {
-
-            let totalItems = filterData.length
-            let pagesTotal = Math.ceil(totalItems / pagination.cuantityPerPage)
-            let currentIndex = pagination.currentPage * pagination.cuantityPerPage
-            setPagination(current => ({ ...current, pagesNumber: pagesTotal }))
-            let tempArray = []
-            for (let i = currentIndex; i < (currentIndex + pagination.cuantityPerPage); i++) {
-                if (filterData[i] != undefined) tempArray.push(filterData[i])
-            }
-            setPaginateData(tempArray)
+        let totalItems = filterData.length
+        let pagesTotal = Math.ceil(totalItems / pagination.cuantityPerPage)
+        let currentIndex = pagination.currentPage * pagination.cuantityPerPage
+        setPagination(current => ({ ...current, pagesNumber: pagesTotal }))
+        let tempArray = []
+        for (let i = currentIndex; i < (currentIndex + pagination.cuantityPerPage); i++) {
+            if (filterData[i] != undefined) tempArray.push(filterData[i])
         }
+        setPaginateData(tempArray)
     }, [filterData, pagination.currentPage])
 
     const nextPage = () => {
@@ -66,27 +63,33 @@ const DTable = (props) => {
         setFilters(current => ({ ...current, ..._new }))
     }
 
-    useEffect(() => {
-        console.log('Filtrando')
-        setFilterData(data.filter(item => {
-            let pass = true
-            let index = 0
-            while (index < headers.length) {
-                let h = headers[index]
-                if (filters[h.name] != undefined)
-                    if (filters[h.name].length > 0) {
-                        if (!item[h.name].includes(filters[h.name])) {
-                            pass = false
-                            break
-                        }
+    const itemFilter = item => {
+        let pass = true
+        let index = 0
+        while (index < headers.length) {
+            let h = headers[index]
+            if (filters[h.name] != undefined)
+                if (filters[h.name].length > 0) {
+                    if (item[h.name] === undefined) {
+                        item[h.name] = ''
                     }
-                index++
-            }
-            if (pass) return item
-        }))
+                    if (!item[h.name].toString().toLowerCase().includes(filters[h.name].toString().toLowerCase())) {
+                        pass = false
+                    }
+                }
+            index++
+        }
+        return pass
+    }
+
+
+    useEffect(() => {
+        setFilterData(data.filter(itemFilter))
     }, [filters, data])
 
-    return (<table className="table  table-striped">
+
+
+    return (<table className={`${props.className}`}>
         <thead>
             <tr>
 
