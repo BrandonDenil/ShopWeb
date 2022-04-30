@@ -4,7 +4,7 @@ import { BsArrowLeft, BsUpload } from "react-icons/bs";
 import { getRequest } from '../../../libraries/Functions';
 import { useDropzone } from 'react-dropzone'
 
-const NuevoProducto = () => {
+const NewProduct = () => {
     const [inputs, setInputs] = useState({})
     const [marcas, setMarcas] = useState([])
     const [categorias, setCategorias] = useState([])
@@ -143,4 +143,4 @@ const styles = {
 }
 
 
-export default NuevoProducto
+export default NewProduct

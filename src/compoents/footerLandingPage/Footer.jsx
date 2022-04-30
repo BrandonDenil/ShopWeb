@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TheFooter = () => {
+const Footer = () => {
   return (
     <footer class="bg-dark" id="tempaltemo_footer">
       <div class="container">
@@ -96,4 +96,4 @@ const TheFooter = () => {
   )
 }
 
-export default React.memo(TheFooter)
+export default React.memo(Footer)

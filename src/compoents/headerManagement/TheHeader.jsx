@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const TheHeader = () => {
+const Header = () => {
 
   return (
     <>
@@ -30,4 +30,4 @@ const TheHeader = () => {
   )
 }
 
-export default TheHeader
+export default Header

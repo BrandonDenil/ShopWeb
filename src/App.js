@@ -9,8 +9,8 @@ const loading = (
 )
 
 // Containers
-const Web = React.lazy(() => import('./views/web/containers/TheLayout'));
-const Admin = React.lazy(() => import('./views/admin/containers/TheLayout'));
+const Web = React.lazy(() => import('./views/web'));
+const Admin = React.lazy(() => import('./views/admin'));
 const Categories = React.lazy(() => import('./views/web/shop/categories'));
 
 

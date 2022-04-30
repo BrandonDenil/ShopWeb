@@ -1,4 +1,4 @@
-import Home from '../Home'
+import Home from '../Home/Home'
 import Caregories from '../shop/categories'
 
 const routes = [

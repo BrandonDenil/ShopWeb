@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getRequest } from "../../../libraries/Functions";
 import { BsTrash, BsPencil, BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import DTable from "../../../compoents/Table";
+import DTable from "../../../compoents/Table/Table";
 
 const editItem = (_item) => {
     return (
@@ -23,13 +23,12 @@ const deleteItem = (_item) => {
     )
 }
 
-const ListarProductos = () => {
-    const [productos, setProductos] = useState([])
+const ListProducts = () => {
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-
         getRequest('/producto').then(result => {
-            setProductos(result)
+            setProducts(result)
         })
     }, [])
 
@@ -50,7 +49,7 @@ const ListarProductos = () => {
                                     <Link to="/admin/productos/nuevo"><button class="btn btn-outline-primary">Nuevo producto<BsPlus /></button></Link>
                                 </div>
                             </div>
-                            <DTable headers={headers} data={productos} filter={true} className={"table  table-striped"}/>
+                            <DTable headers={headers} data={products} filter={true} className={"table  table-striped"}/>
                         </div>
                     </div>
                 </div>
@@ -59,4 +58,4 @@ const ListarProductos = () => {
     )
 }
 
-export default ListarProductos
+export default ListProducts

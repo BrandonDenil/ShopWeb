@@ -7,7 +7,6 @@ import {
 
 // routes config
 import routes from './routes'
-import ListarProductos from '../productos/listarProductos'
 
 const loading = (
   <div className="pt-3 text-center">
@@ -15,7 +14,7 @@ const loading = (
   </div>
 )
 
-const TheContent = () => {
+const Content = () => {
   return (
     <main className="c-main">
       <div >
@@ -40,4 +39,4 @@ const TheContent = () => {
   )
 }
 
-export default React.memo(TheContent)
+export default React.memo(Content)
